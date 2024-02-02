@@ -1,0 +1,46 @@
+#!/bin/sh
+
+BLANK='#00000000'
+CLEAR='#ffffff22'
+DEFAULT='#38ed28'
+TEXT='#38ed28'
+WRONG='#ed0909bb'
+VERIFYING='#fffb0f'
+BLACK='#000000cc'
+
+i3lock \
+--insidever-color=$BLANK     \
+--ringver-color=$VERIFYING   \
+\
+--insidewrong-color=$BLANK   \
+--ringwrong-color=$WRONG     \
+\
+--inside-color=$BLANK        \
+--ring-color=$BLANK        \
+--line-color=$BLANK          \
+--separator-color=$BLANK   \
+\
+--verif-color=$VERIFYING          \
+--wrong-color=$WRONG          \
+--time-color=$TEXT           \
+--date-color=$TEXT           \
+--layout-color=$TEXT         \
+--keyhl-color=$TEXT        \
+--bshl-color=$WRONG          \
+\
+--screen 1                   \
+--blur 9                     \
+--clock                      \
+--radius 150 \
+--time-str="%H:%M:%S"        \
+--date-str="%Y.%m.%d"       \
+\
+--verif-text="Verifying..." \
+--wrong-text="Access denied" \
+\
+--time-font="Eurostile Extended" \
+--date-font="Eurostile Extended" \
+--verif-font="Eurostile Extended" \
+--wrong-font="Eurostile Extended" \
+\
+-e \
