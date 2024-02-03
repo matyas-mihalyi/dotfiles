@@ -9,4 +9,4 @@ alias ssh_dka="ssh -i ~/.ssh/rackhost_dka_nonroot dka@91.227.139.55"
 alias mount_wlkmn="sudo mount /dev/disk/by-label/WALKMAN /media/matyi/"
 alias umount_wlkmn="sudo umount /media/matyi/"
 
-alias myconfig='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+alias myconfig='/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'
