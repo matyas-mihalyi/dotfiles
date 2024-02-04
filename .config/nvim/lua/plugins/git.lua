@@ -1,9 +1,9 @@
 return {
+  '/tpope/vim-fugitive',
   '/lewis6991/gitsigns.nvim',
   config =function ()
-    
     require('gitsigns').setup({
-      on_attach = function (bufrn)
+      on_attach = function (bufnr)
         local gs = package.loaded.gitsigns
 
         local function map(mode, l, r, opts)
