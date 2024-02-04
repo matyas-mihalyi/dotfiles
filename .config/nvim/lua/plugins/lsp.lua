@@ -15,7 +15,7 @@ return {
   },
 	{
 		'neovim/nvim-lspconfig',
-    config = function () 
+    config = function ()
       -- Setup language servers.
       local lspconfig = require('lspconfig')
       lspconfig.lua_ls.setup({})
