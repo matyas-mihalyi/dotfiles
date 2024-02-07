@@ -1,0 +1,23 @@
+[user]
+	name = Matyas Mihalyi
+	email = mihalyi.istvan.m@outlook.hu
+[credential]
+	helper = /usr/local/bin/git-credential-manager
+	helper = 
+	helper = /usr/local/bin/git-credential-manager
+	credentialStore = secretservice
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[core]
+	editor = nvim
+[color "status"]
+	branch = 215
+	added = 80
+	changed = 69
+	deleted = 211
+	untracked = 113
+[alias]
+	st = status
+	unstage = reset HEAD --
+	lg = log --oneline -10
+	rf = checkout HEAD --
