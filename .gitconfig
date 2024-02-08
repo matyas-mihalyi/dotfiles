@@ -21,3 +21,4 @@
 	unstage = reset HEAD --
 	lg = log --oneline -10
 	rf = checkout HEAD --
+  mf = checkout --patch --
