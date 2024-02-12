@@ -9,7 +9,7 @@ return {
     'williamboman/mason-lspconfig.nvim',
     config = function()
       require('mason-lspconfig').setup({
-        ensure_installed = { 'lua_ls', 'tsserver', 'clangd', 'html', 'cssls' }
+        ensure_installed = { 'lua_ls', 'tsserver', 'clangd', 'html', 'cssls', 'eslint' }
       })
     end
   },
@@ -19,8 +19,19 @@ return {
       -- Setup language servers.
       local lspconfig = require('lspconfig')
       lspconfig.lua_ls.setup({})
-      lspconfig.tsserver.setup({})
+      lspconfig.tsserver.setup({
+        filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'ejs' }
+      })
       lspconfig.clangd.setup({})
+
+      lspconfig.eslint.setup({
+        on_attach = function(_client, bufnr)
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "EslintFixAll",
+          })
+        end,
+      })
 
       --Enable (broadcasting) snippet capability for completion
       local capabilities = vim.lsp.protocol.make_client_capabilities()
