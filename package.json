@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "yaml-language-server": "file:../yaml-language-server",
+    "vscode-langservers-extracted": "file:../vscode-langservers-extracted",
+    "typescript-language-server": "file:../typescript-language-server"
+  }
+}
