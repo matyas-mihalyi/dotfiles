@@ -13,7 +13,7 @@ sudo apt install ripgrep
 # install lsps ?
 
 cd .local/lib/
-mv ~/package.json .
+mv ~/dotfiles/package.json .
 
 git clone https://github.com/hrsh7th/vscode-langservers-extracted
 git clone https://github.com/typescript-language-server/typescript-language-server
@@ -22,3 +22,8 @@ git clone https://github.com/redhat-developer/yaml-language-server
 sudo npm i -g vscode-langservers-extracted
 sudo npm i -g typescript typescript-language-server
 sudo npm i -g yaml-language-server
+
+## todo: dotifles
+cd ~/dotfiles
+
+
