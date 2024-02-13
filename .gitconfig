@@ -22,3 +22,4 @@
 	lg = log --oneline -10
 	rf = checkout HEAD --
   mf = checkout --patch --
+  co = checkout
