@@ -23,7 +23,6 @@ cd ~
 ## telescope grep find dependencies
 sudo apt install fd-find ripgrep
 
-
 # install lsps
 npm i -g typescript
 
