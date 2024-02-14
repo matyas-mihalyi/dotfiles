@@ -1,5 +1,9 @@
 #!/bin/bash
 
+cd ~/dotfiles
+git checkout coder
+cd "$HOME"
+
 # Install neovim
 if [ -d ~/neovim ]; then
   cd ~/neovim
@@ -18,13 +22,15 @@ sudo apt-get install ninja-build gettext cmake unzip curl -y
 cd ~/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
 ## install neovim
 cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
-cd ~
+cd "$HOME"
 
 ## telescope grep find dependencies
 sudo apt install fd-find ripgrep
 
 # install lsps
-npm i -g typescript
+sudo chmod -R 1000:1000 "home/coder/.npm/"
+sudo chmod -R 1000:1000 "home/coder/.npm-packages/"
+npm i -g depcheck
 
 cd .local/lib/
 mv ~/dotfiles/package.json .
@@ -32,12 +38,10 @@ mv ~/dotfiles/package.json .
 git clone https://github.com/hrsh7th/vscode-langservers-extracted
 git clone https://github.com/typescript-language-server/typescript-language-server
 git clone https://github.com/redhat-developer/yaml-language-server
-
-cd ~
-
-npm i -g vscode-langservers-extracted
+npm i -g vscode-langservers-extracted typescript
 npm i -g typescript typescript-language-server
 npm i -g yaml-language-server
+cd "$HOME"
 
 # setup dotfiles git repository
 git clone -b coder --separate-git-dir=$HOME/.myconfig https://github.com/matyas-mihalyi/dotfiles.git $HOME/myconf-tmp
