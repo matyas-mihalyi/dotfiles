@@ -9,5 +9,7 @@ vim.keymap.set("n", "<leader>j", "<C-w>j")
 vim.keymap.set("n", "<leader>J", "<C-w>J")
 vim.keymap.set("n", "<leader>k", "<C-w>k")
 vim.keymap.set("n", "<leader>K", "<C-w>K")
+-- exit inser mode
+vim.keymap.set("i", "<C-c>", "<Esc>")
 
 
