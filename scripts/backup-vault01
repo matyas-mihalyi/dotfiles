@@ -1,0 +1,13 @@
+#!/bin/bash
+
+dir=$(pwd)
+cd ~/Documents/vault01
+
+current_date=$(date +"%Y-%m-%dT%H:%M:%S%z")
+
+git add .
+git commit -m "backup $current_date"
+git push
+
+echo "Backed up vault01"
+cd $dir
