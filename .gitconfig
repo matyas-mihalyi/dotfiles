@@ -19,7 +19,8 @@
 [alias]
 	st = status
 	unstage = reset HEAD --
-	lg = log --oneline -10
-	rf = checkout HEAD --
+	lg = log --oneline -10 --abbrev-commit --stat --format=\"%n%C(45)%h %C(135)%s\"
+	lg = log --oneline -10 
+  rf = checkout HEAD --
   mf = checkout --patch --
   co = checkout

@@ -10,3 +10,7 @@ alias mount_wlkmn="sudo mount /dev/disk/by-label/WALKMAN /media/matyi/"
 alias umount_wlkmn="sudo umount /media/matyi/"
 
 alias myconfig='/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'
+
+alias l='ls --group-directories-first -1'
+
+alias display_off='xrandr --output eDP-1 --off'
