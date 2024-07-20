@@ -19,3 +19,5 @@ alias myconfig='/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'
 alias l='ls --group-directories-first -1'
 
 alias display_off='xrandr --output eDP-1 --off'
+
+alias scripts='cat package.json | jq .scripts'
