@@ -1,0 +1,31 @@
+#!/usr/bin/bash
+
+repos=(
+"https://github.com/neovim/nvim-lspconfig.git"
+"https://github.com/nvim-lua/plenary.nvim.git"
+"https://github.com/nvim-treesitter/nvim-treesitter.git"
+"https://github.com/folke/tokyonight.nvim.git"
+"https://github.com/nvim-telescope/telescope.nvim.git"
+"https://github.com/ThePrimeagen/harpoon.git"
+"https://github.com/m4xshen/autoclose.nvim.git"
+"https://github.com/L3MON4D3/LuaSnip.git"
+"https://github.com/saadparwaiz1/cmp_luasnip.git"
+"https://github.com/rafamadriz/friendly-snippets.git"
+"https://github.com/hrsh7th/nvim-cmp.git"
+"https://github.com/MunifTanjim/eslint.nvim.git"
+"https://github.com/jose-elias-alvarez/null-ls.nvim.git"
+)
+
+for repo in "${repos[@]}"
+do 
+  plugin=$(echo $repo | grep -Po '[^/]+(?=\.git$)') # repo name
+  user=$(echo $repo | grep -Po '\.com\/\K[0-9a-zA-Z-\.]+') # user name
+  target_dir="/home/$USER/.local/share/nvim/site/pack/$user/start/$plugin" 
+  if [ -d $target_dir ]; then
+    echo "$plugin is already installed"
+  else
+    echo "Installing $plugin"
+    mkdir -p $target_dir 
+    git clone $repo $target_dir
+  fi
+done
