@@ -13,5 +13,3 @@ vim.opt.incsearch = true
 vim.opt.scrolloff = 8
 
 vim.g.mapleader = " "
-
-vim.cmd.colorscheme("tokyonight")

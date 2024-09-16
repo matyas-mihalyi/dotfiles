@@ -1,5 +1,5 @@
 require("remaps")
 require("set")
-require("lsp-config")
-require("autocomplete")
-require("treesitter")
+require("telescope-config")
+require("treesitter-config")
+require("theme")
