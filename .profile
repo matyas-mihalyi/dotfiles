@@ -1,4 +1,4 @@
-# ~/.profile: executed by the command interpreter for login shells.
+# true~/.profile: executed by the command interpreter for login shells.
 # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
 # exists.
 # see /usr/share/doc/bash/examples/startup-files for examples.
@@ -23,12 +23,8 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
+    PATH="$HOME/.local/bin:$HOME/.local/bin/lua_ls/bin:$PATH"
 fi
-
-export WHCH700N="38:18:4C:92:DA:41"
-alias headon="bluetoothctl connect $WHCH700N"
-alias headoff="bluetoothctl disconnect $WHCH700N"
 
 if [ -d "$HOME/scripts" ] ; then
     PATH="$HOME/scripts:$PATH"
