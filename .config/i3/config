@@ -196,14 +196,15 @@ bar {
 
 
 # Color shemes for windows 
-set $bgcolor    #5e513d99
-set $in-bgcolor #3636364d
-set $text       #ffffff
+set $border     #630312
+set $bgcolor    #010801
+set $in-bgcolor #000000
+set $text       #2cbc39
 set $u-bgcolor  #ff0000
-set $indicator  #a8a3c1
-set $in-text    #969696
+set $indicator  #630312
+set $in-text    #16871d
 #                       border          background      text            indicator (a line which shows where the next window will be placed)     
-client.focused          $bgcolor        $bgcolor        $text           $indicator
+client.focused          $border        $bgcolor        $text           $indicator
 client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
 client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
 client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcolor 
@@ -240,4 +241,4 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+F12 mode "$mode_system"
+bindsym $mod+F10 mode "$mode_system"

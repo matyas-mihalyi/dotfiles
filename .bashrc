@@ -128,8 +128,3 @@ if ! shopt -oq posix; then
 fi
 
 export PATH=$PATH:~/bin:~/.local/bin
-
-
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
