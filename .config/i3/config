@@ -209,7 +209,7 @@ client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-bgco
 client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcolor 
 
 # Display Wallpaper
-exec_always feh --bg-fill /home/$USER/.config/i3/ae86.webp
+exec_always feh --bg-max /home/$USER/.config/i3/wallpapers/4172501.jpg
 
 # Shortcut for Lockscreen
 set $lockscreen exec /home/$USER/.config/i3/lock
