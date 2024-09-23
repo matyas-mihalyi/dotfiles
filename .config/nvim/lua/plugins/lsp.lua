@@ -49,6 +49,11 @@ return {
 
       lspconfig.angularls.setup{}
 
+      lspconfig.emmet_ls.setup({
+        capabilities = capabilities,
+        filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
+      })
+
       -- Global mappings.
       -- See `:help vim.diagnostic.*` for documentation on any of the below functions
       vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)

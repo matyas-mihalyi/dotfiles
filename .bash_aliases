@@ -1,12 +1,12 @@
 export Sony_WH_CH700N="38:18:4C:92:DA:41"
 alias headon="bluetoothctl connect $Sony_WH_CH700N"
 alias headoff="bluetoothctl disconnect $Sony_WH_CH700N"
-alias headreset="bluetoothctl power off && bluetoothctl power on"
+alias headreset="bluetoothctl remove $Sony_WH_CH700N; bluetoothctl trust $Sony_WH_CH700N; bluetoothctl pair $Sony_WH_CH700N && bluetoothctl connect $Sony_WH_CH700N"
 
 export Sony_SRS_XB33="98:52:3D:54:A1:E3"
 alias spon="bluetoothctl connect $Sony_SRS_XB33"
 alias spoff="bluetoothctl disconnect $Sony_SRS_XB33"
-alias spreset="bluetoothctl power off && bluetoothctl power on"
+alias spreset="bluetoothctl trust $Sony_SRS_XB33; bluetoothctl pair $Sony_SRS_XB33 && bluetoothctl connect $Sony_SRS_XB33"
 
 alias ssh_dka_root="ssh -i ~/.ssh/rackhost_dka root@91.227.139.55"
 alias ssh_dka="ssh -i ~/.ssh/rackhost_dka_nonroot dka@91.227.139.55"
