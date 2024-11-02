@@ -1,5 +1,5 @@
 require("matyi.autocmd")
+require("matyi.load_theme")
 require("matyi.remap")
 require("matyi.lazy")
 require("matyi.set")
-
