@@ -222,6 +222,7 @@ exec_always picom
 # Allocate applications to workspaces. Use 'xprop' command to get WM_CLASS(STRING) property of application.
 for_window [class="Code"] move to workspace $ws1
 for_window [class="calibre"] move to workspace $ws3
+for_window [class="obsidian"] move to workspace $ws3
 for_window [class="Brave-browser"] move to workspace $ws4
 for_window [class="Spotify"] move to workspace $ws5
 
