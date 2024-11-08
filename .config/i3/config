@@ -209,6 +209,9 @@ client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgco
 client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
 client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcolor 
 
+# client.title_format "     %title      \\n"
+for_window [all] title_format "          %title"
+
 # Display Wallpaper
 exec_always feh --bg-max /home/$USER/.config/i3/wallpapers/4172501.jpg
 

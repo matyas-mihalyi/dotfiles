@@ -21,3 +21,7 @@ alias l='ls --group-directories-first -1'
 alias display_off='xrandr --output eDP-1 --off'
 
 alias scripts='cat package.json | jq .scripts'
+
+# project shortcuts
+alias gcs='cd ~/projects/geo-chat/server'
+alias gcd='cd ~/projects/geo-chat/dev-client'
