@@ -25,3 +25,4 @@ alias scripts='cat package.json | jq .scripts'
 # project shortcuts
 alias gcs='cd ~/projects/geo-chat/server'
 alias gcd='cd ~/projects/geo-chat/dev-client'
+alias sok='cd $HOME/projects/sounds-of-korhal'
