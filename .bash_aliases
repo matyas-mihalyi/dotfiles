@@ -20,10 +20,13 @@ alias l='ls --group-directories-first -1'
 
 alias display_off='xrandr --output eDP-1 --off'
 
-alias scripts='cat package.json | jq .scripts'
-
 # project shortcuts
 alias gcs='cd ~/projects/geo-chat/server'
 alias gcd='cd ~/projects/geo-chat/dev-client'
 alias sok='cd $HOME/projects/sounds-of-korhal'
 alias dkabff='cd $HOME/projects/dka-api/dka-bff'
+
+alias scripts='cat package.json | jq .scripts'
+
+# misc
+alias sv='sync_vault01'
