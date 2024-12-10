@@ -8,25 +8,35 @@ alias spon="bluetoothctl connect $Sony_SRS_XB33"
 alias spoff="bluetoothctl disconnect $Sony_SRS_XB33"
 alias spreset="bluetoothctl trust $Sony_SRS_XB33; bluetoothctl pair $Sony_SRS_XB33 && bluetoothctl connect $Sony_SRS_XB33"
 
-alias ssh_dka_root="ssh -i ~/.ssh/rackhost_dka root@91.227.139.55"
+alias ssh_dka-r="ssh root@91.227.139.55"
 alias ssh_dka="ssh -i ~/.ssh/rackhost_dka_nonroot dka@91.227.139.55"
 
 alias mount_wlkmn="sudo mount /dev/disk/by-label/WALKMAN /media/matyi/"
 alias umount_wlkmn="sudo umount /media/matyi/"
 
-alias myconfig='/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'
+alias mcf='/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'
 
 alias l='ls --group-directories-first -1'
 
-alias display_off='xrandr --output eDP-1 --off'
+alias displayoff='xrandr --output eDP-1 --off'
+alias displayon='xrandr --output eDP-1 --auto'
 
 # project shortcuts
 alias gcs='cd ~/projects/geo-chat/server'
 alias gcd='cd ~/projects/geo-chat/dev-client'
+
 alias sok='cd $HOME/projects/sounds-of-korhal'
-alias dkabff='cd $HOME/projects/dka-api/dka-bff'
+
+alias dkab='cd $HOME/projects/dka-api/dka-bff'
+alias dkaa='cd $HOME/projects/dka-api/api'
+alias dkan='cd $HOME/projects/dka-api/dka-nginx-config'
+alias dkas='cd $HOME/projects/dka-api/scraper'
+alias dkaan='cd $HOME/projects/dka-fe/dka-angular'
+alias dkasv='cd $HOME/projects/dka-fe/dka'
 
 alias scripts='cat package.json | jq .scripts'
 
 # misc
 alias sv='sync_vault01'
+alias myconfig='/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'
+alias vimcf='cd $HOME/.config/nvim'
