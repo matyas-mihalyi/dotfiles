@@ -3,7 +3,9 @@ local telescope = require("telescope")
 telescope.setup({
 	extensions = {
 		["ui-select"] = {
-			codeactions = {},
+			require("telescope.themes").get_dropdown({
+				-- even more opts
+			}),
 		},
 	},
 })
