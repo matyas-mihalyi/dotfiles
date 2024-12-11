@@ -9,4 +9,5 @@ return {
 			version = "^1.0.0",
 		},
 	},
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 }

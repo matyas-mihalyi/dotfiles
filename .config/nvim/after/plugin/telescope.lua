@@ -7,6 +7,7 @@ telescope.setup({
 				-- even more opts
 			}),
 		},
+		fzf = {},
 	},
 })
 
@@ -33,3 +34,4 @@ vim.keymap.set(
 
 telescope.load_extension("ui-select")
 telescope.load_extension("live_grep_args")
+telescope.load_extension("fzf")
