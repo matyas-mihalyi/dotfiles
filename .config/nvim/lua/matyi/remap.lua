@@ -11,10 +11,16 @@ vim.keymap.set("n", "<leader>J", "<C-w>J")
 vim.keymap.set("n", "<leader>k", "<C-w>k")
 vim.keymap.set("n", "<leader>K", "<C-w>K")
 
+vim.keymap.set("n", "<C-i>", "gt")
+vim.keymap.set("n", "<S-Tab>", "gT")
+
+-- terminal
+vim.keymap.set("t", "<esc>", [[<c-\><c-n>]])
+
 -- goto definition in new right side pane
 vim.keymap.set("n", "gds", ":bo vs | lua vim.lsp.buf.definition()<CR>")
 
--- exit inser mode
+-- exit insert mode
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- center view
