@@ -11,8 +11,8 @@ vim.keymap.set("n", "<leader>J", "<C-w>J")
 vim.keymap.set("n", "<leader>k", "<C-w>k")
 vim.keymap.set("n", "<leader>K", "<C-w>K")
 
-vim.keymap.set("n", "<C-i>", "gt")
-vim.keymap.set("n", "<S-Tab>", "gT")
+vim.keymap.set("n", "<C-Tab>", "gt")
+vim.keymap.set("n", "<C-S-Tab>", "gT")
 
 -- terminal
 vim.keymap.set("t", "<esc>", [[<c-\><c-n>]])
