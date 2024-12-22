@@ -213,7 +213,7 @@ client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcol
 for_window [all] title_format "          %title"
 
 # Display Wallpaper
-exec_always feh --bg-max /home/$USER/.config/i3/wallpapers/4172501.jpg
+exec_always feh --bg-max /home/$USER/.config/i3/wallpapers/8420010.jpg
 
 # Shortcut for Lockscreen
 set $lockscreen exec /home/$USER/.config/i3/lock
