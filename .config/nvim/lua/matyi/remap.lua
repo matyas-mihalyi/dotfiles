@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
 
 -- panes
 vim.keymap.set("n", "<leader>l", "<C-w>l")
@@ -28,6 +27,9 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
+
+-- oil
+vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- toggle theme
 local theme_file = vim.fn.stdpath("config") .. "/theme.txt"

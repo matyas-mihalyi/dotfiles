@@ -2,8 +2,18 @@
 vim.api.nvim_create_autocmd("InsertLeave", {
 	pattern = "*",
 	callback = function()
-		if vim.bo.filetype ~= "netrw" then
-			vim.cmd(":w")
+		local bufname = vim.fn.expand("%")
+		local filetype = vim.bo.filetype
+
+		-- Ensure the buffer has a real file name and exclude certain filetypes
+		if
+			bufname ~= ""
+			and bufname ~= nil
+			and filetype ~= "netrw"
+			and filetype ~= "oil"
+			and filetype ~= "TelescopePrompt"
+		then
+			vim.cmd("silent! write")
 		end
 	end,
 })
