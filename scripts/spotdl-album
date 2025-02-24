@@ -1,0 +1,4 @@
+#!/bin/bash
+
+spotdl $1 --output={track-number}-{title}-{artists}
+

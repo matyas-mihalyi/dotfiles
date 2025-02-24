@@ -1,0 +1,4 @@
+#!/bin/bash
+
+spotdl $1 --output={list-position}-{title}-{artists}
+

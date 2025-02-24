@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Check if a folder path is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 /path/to/folder"
+    exit 1
+fi
+
+# Ensure the given path is a directory
+if [ ! -d "$1" ]; then
+    echo "Error: '$1' is not a directory."
+    exit 1
+fi
+
+# Process MP3 files recursively, handling filenames with spaces
+find "$1" -type f -iname "*.mp3" -print0 | while IFS= read -r -d '' file; do
+    echo "Processing: $file"
+
+    # Define temporary paths inside the same directory
+    cover_art="${file%.*}-cover.jpg"
+    baseline_art="${file%.*}-baseline.jpg"
+
+    # Remove old cover art file if it exists
+    rm -f "$cover_art"
+
+    # Extract cover art using ffmpeg
+    ffmpeg -i "$file" -map 0:v:0 -c:v copy "$cover_art" -y &>/dev/null
+
+    # Check if cover art was extracted successfully
+    if [ ! -s "$cover_art" ]; then
+        echo "No cover art found in $file, skipping..."
+        rm -f "$cover_art"
+        continue
+    fi
+
+    # Convert extracted cover art to baseline JPEG using jpegtran
+    echo "Converting to baseline..."
+    jpegtran -outfile "$baseline_art" "$cover_art"
+
+    # Update MP3 metadata with the baseline cover using kid3-cli
+    echo "Updating metadata with kid3..."
+    kid3-cli -c "set Picture \"$baseline_art\" \"1\"" "$file"
+
+    # Cleanup
+    rm -f "$cover_art" "$baseline_art"
+
+    echo "Updated cover art for: $file"
+done
+
+echo "Processing complete."
