@@ -36,6 +36,21 @@ for file in "${arr[@]}"; do
     echo "Updated cover art for: $file"
 done
 
+for file in "${arr[@]}"; do
+    echo "Processing: $file"
+    if [ ! -f "$cover_art" ]; then
+      echo "Cover art not found"
+      ffmpeg -i "$file" -an -vcodec copy "$cover_art" 
+      jpegtran -outfile "$baseline_art" "$cover_art"
+    fi
+
+    echo "Updating metadata for $file"
+    kid3-cli -c "set Picture:\"$baseline_art\" \"1\"" "$file"
+
+
+    echo "Updated cover art for: $file"
+done
+
 # Cleanup
-# rm -f "$cover_art" "$baseline_art"
+rm -f "$cover_art" "$baseline_art"
 echo "Processing complete."

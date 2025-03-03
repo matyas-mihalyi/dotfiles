@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Check if a folder path is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 /path/to/folder https://spotify.link"
+    exit 1
+fi
+
+# Ensure the given path is a directory
+if [ ! -d "$1" ]; then
+    echo "Not a directory"
+    exit 1
+fi
+
+
+arr=("$1"/*)
+
+for file in "${arr[@]}"; do
+    echo "Processing: $file"
+
+    cover_art="${file%.*}-cover.jpg"
+    baseline_art="${file%.*}-baseline.jpg"
+    ffmpeg -i "$file" -an -vcodec copy "$cover_art" &> /dev/null
+
+    if [ ! -f "$cover_art" ]; then
+      echo "Cover art not found"
+    fi
+
+    jpegtran -outfile "$baseline_art" "$cover_art"
+
+    if [ ! -f "$baseline_art" ]; then
+      echo "Baseline jpeg not found"
+    fi
+
+    kid3-cli -c "set Picture:\"$baseline_art\" \"1\"" "$file"
+
+    rm -f "$cover_art" "$baseline_art"
+    echo "Updated cover art for: $file"
+done
+
+# Cleanup
+echo "Processing complete."

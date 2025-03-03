@@ -34,6 +34,8 @@ alias dkas='cd $HOME/projects/dka-api/scraper'
 alias dkaan='cd $HOME/projects/dka-fe/dka-angular'
 alias dkasv='cd $HOME/projects/dka-fe/dka'
 
+alias learnc='cd $HOME/projects/learning/c/c-programming-language-solutions'
+# programming utils
 alias scripts='cat package.json | jq .scripts'
 
 # misc
