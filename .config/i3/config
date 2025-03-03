@@ -226,7 +226,7 @@ exec_always picom
 for_window [class="Code"] move to workspace $ws1
 for_window [class="calibre"] move to workspace $ws3
 for_window [class="obsidian"] move to workspace $ws3
-for_window [class="browser"] move to workspace $ws4
+for_window [class="Brave"] move to workspace $ws4
 for_window [class="Spotify"] move to workspace $ws5
 
 # "System mode" for shutdown, logout etc

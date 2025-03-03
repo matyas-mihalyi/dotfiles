@@ -2,10 +2,10 @@
 	name = Matyas Mihalyi
 	email = mihalyi.istvan.m@outlook.hu
 [credential]
-	helper = /usr/local/bin/git-credential-manager
+	helper = 
+	credentialStore = secretservice
 	helper = 
 	helper = /usr/local/bin/git-credential-manager
-	credentialStore = secretservice
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [core]

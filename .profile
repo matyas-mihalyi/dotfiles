@@ -29,3 +29,5 @@ fi
 if [ -d "$HOME/scripts" ] ; then
     PATH="$HOME/scripts:$PATH"
 fi
+export NODEJS_HOME=/usr/local/lib/node/nodejs
+export PATH=$NODEJS_HOME/bin:$PATH
