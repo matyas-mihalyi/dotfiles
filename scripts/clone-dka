@@ -1,0 +1,21 @@
+#!/bin/bash
+
+dka_repos=(
+"https://github.com/matyas-mihalyi/dka-scraper.git"
+"https://github.com/matyas-mihalyi/dka-api.git"
+"https://github.com/matyas-mihalyi/dka-bff.git"
+"https://github.com/matyas-mihalyi/dka-angular.git"
+"https://github.com/matyas-mihalyi/dka-nginx-config.git"
+"https://github.com/matyas-mihalyi/dka.git"
+)
+
+mkdir $HOME/projects/dka/
+cd $HOME/projects/dka/
+for repo in "${dka_repos[@]}"; do
+ echo "Cloning $repo..."
+ git clone $repo
+done
+
+echo "Cloned all DKA repos."
+
+

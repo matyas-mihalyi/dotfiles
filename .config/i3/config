@@ -213,7 +213,7 @@ client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcol
 for_window [all] title_format "          %title"
 
 # Display Wallpaper
-exec_always feh --bg-max /home/$USER/.config/i3/wallpapers/4172501.jpg
+exec_always feh --bg-max /home/$USER/.config/i3/wallpapers/8420010.jpg
 
 # Shortcut for Lockscreen
 set $lockscreen exec /home/$USER/.config/i3/lock
@@ -226,7 +226,7 @@ exec_always picom
 for_window [class="Code"] move to workspace $ws1
 for_window [class="calibre"] move to workspace $ws3
 for_window [class="obsidian"] move to workspace $ws3
-for_window [class="Brave-browser"] move to workspace $ws4
+for_window [class="Brave"] move to workspace $ws4
 for_window [class="Spotify"] move to workspace $ws5
 
 # "System mode" for shutdown, logout etc
