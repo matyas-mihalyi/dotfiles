@@ -2,8 +2,8 @@ return {
   "nvim-treesitter/nvim-treesitter",
   lazy = false,
   build = ":TSUpdate",
-  config = function ()
-    require'nvim-treesitter.configs'.setup {
+  config = function()
+    require 'nvim-treesitter.configs'.setup {
       -- A list of parser names, or "all" (the five listed parsers should always be installed)
       ensure_installed = {
         "c",
@@ -13,6 +13,7 @@ return {
         "query",
         "javascript",
         "typescript",
+        "tsx",
         "html",
         "css",
         "json",

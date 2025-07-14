@@ -129,7 +129,6 @@ fi
 
 export PATH=$PATH:~/bin:~/.local/bin
 
-=======
 # pnpm
 export PNPM_HOME="/home/matyi/.local/share/pnpm"
 case ":$PATH:" in

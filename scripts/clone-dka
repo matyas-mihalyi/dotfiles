@@ -9,7 +9,7 @@ dka_repos=(
 "https://github.com/matyas-mihalyi/dka.git"
 )
 
-mkdir $HOME/projects/dka/
+mkdir -p $HOME/projects/dka/
 cd $HOME/projects/dka/
 for repo in "${dka_repos[@]}"; do
  echo "Cloning $repo..."

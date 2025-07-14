@@ -1,3 +1,15 @@
+local function eslint_config_exists()
+  local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
+  if not vim.tbl_isempty(eslintrc) then
+    return true
+  end
+  if vim.fn.filereadable("package.json") then
+    if vim.fn.json_decode(vim.fn.readfile("package.json"))["eslintConfig"] then
+      return true
+    end
+  end
+  return false
+end
 return {
   {
     "pmizio/typescript-tools.nvim",
@@ -14,7 +26,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "clangd", "html", "cssls", "eslint", "jsonls", "emmet_ls" },
+        ensure_installed = { "lua_ls", "clangd", "html", "cssls", "eslint", "jsonls", "emmet_ls", "yamlls" },
       })
     end,
   },
@@ -31,15 +43,6 @@ return {
       lspconfig.lua_ls.setup({})
       -- lspconfig.ts_ls.setup({})
       lspconfig.clangd.setup({})
-
-      lspconfig.eslint.setup({
-        on_attach = function(_client, bufnr)
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = bufnr,
-            command = "EslintFixAll",
-          })
-        end,
-      })
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -58,6 +61,7 @@ return {
       })
 
       lspconfig.angularls.setup({})
+      lspconfig.yamlls.setup({})
 
       lspconfig.emmet_ls.setup({
         capabilities = capabilities,

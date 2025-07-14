@@ -27,14 +27,17 @@ alias gcd='cd ~/projects/geo-chat/dev-client'
 
 alias sok='cd $HOME/projects/sounds-of-korhal'
 
-alias dkab='cd $HOME/projects/dka-api/dka-bff'
-alias dkaa='cd $HOME/projects/dka-api/api'
-alias dkan='cd $HOME/projects/dka-api/dka-nginx-config'
-alias dkas='cd $HOME/projects/dka-api/scraper'
-alias dkaan='cd $HOME/projects/dka-fe/dka-angular'
-alias dkasv='cd $HOME/projects/dka-fe/dka'
+alias dkab='cd $HOME/projects/dka/dka-bff'
+alias dkaa='cd $HOME/projects/dka/dka-api'
+alias dkan='cd $HOME/projects/dka/dka-nginx-config'
+alias dkas='cd $HOME/projects/dka/scraper'
+alias dkaan='cd $HOME/projects/dka/dka-angular'
+alias dkasv='cd $HOME/projects/dka/dka'
+
+alias bem='cd $HOME/projects/bene-memo'
 
 alias learnc='cd $HOME/projects/learning/c/c-programming-language-solutions'
+alias azu='cd $HOME/projects/learning/react/azul'
 # programming utils
 alias scripts='cat package.json | jq .scripts'
 
