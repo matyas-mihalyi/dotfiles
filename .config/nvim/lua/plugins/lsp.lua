@@ -81,6 +81,19 @@ return {
         },
       })
 
+      lspconfig.cds_lsp.setup({
+        default_config = {
+          cmd = {
+            vim.fn.expand("cds-lsp"),
+            "--stdio",
+          },
+          filetypes = { "cds" },
+          root_dir = lspconfig.util.root_pattern(".git", "package.json"),
+          settings = {},
+        },
+      })
+
+
       -- Global mappings.
       -- See `:help vim.diagnostic.*` for documentation on any of the below functions
       vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
