@@ -37,7 +37,10 @@ alias dkasv='cd $HOME/projects/dka/dka'
 alias bem='cd $HOME/projects/bene-memo'
 
 alias learnc='cd $HOME/projects/learning/c/c-programming-language-solutions'
-alias azu='cd $HOME/projects/learning/react/azul'
+alias azu='cd $HOME/projects/luza'
+
+alias sap='cd $HOME/projects/galactic-spacefarer-adventure'
+
 # programming utils
 alias scripts='cat package.json | jq .scripts'
 
@@ -45,3 +48,6 @@ alias scripts='cat package.json | jq .scripts'
 alias sv='sync_vault01'
 alias myconfig='/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'
 alias vimcf='cd $HOME/.config/nvim'
+
+# games
+alias busytown='cd ~/Games/Busytown && dosbox -c "mount C ." -c "C:" -c "cd BUSYCD" -c "BUSYCD.BAT"'
