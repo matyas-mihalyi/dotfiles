@@ -19,6 +19,14 @@ vim.keymap.set("t", "<esc>", [[<c-\><c-n>]])
 -- goto definition in new right side pane
 vim.keymap.set("n", "gds", ":bo vs | lua vim.lsp.buf.definition()<CR>")
 
+--tabs
+vim.keymap.set("n", "<leader>tn", ":tabnew<CR>")
+vim.keymap.set("n", "<leader>tc", ":tabclose<CR>")
+vim.keymap.set("n", "<leader>th", ":tabprevious<CR>")
+vim.keymap.set("n", "<leader>tl", ":tabnext<CR>")
+vim.keymap.set("n", "<S-leader>th", ":tabmove -1<CR>")
+vim.keymap.set("n", "<S-leader>tl", ":tabmove -1<CR>")
+
 -- exit insert mode
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
