@@ -39,31 +39,34 @@ return {
           expose_as_code_action = { "fix_all", "add_missing_imports" },
         },
       })
-      local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({})
+      vim.lsp.enable("lua_ls")
       -- lspconfig.ts_ls.setup({})
-      lspconfig.clangd.setup({})
+      vim.lsp.enable("clangd")
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-      lspconfig.jsonls.setup({
+      vim.lsp.config("jsonls", {
         capabilities = capabilities,
       })
+      vim.lsp.enable("jsonls")
 
       --Enable (broadcasting) snippet capability for completion
-      lspconfig.html.setup({
+      vim.lsp.config("html", {
         capabilities = capabilities,
         filetypes = { "html", "ejs" },
       })
-      lspconfig.cssls.setup({
+      vim.lsp.enable("html")
+
+      vim.lsp.config("cssls", {
         capabilities = capabilities,
       })
+      vim.lsp.enable("cssls")
 
-      lspconfig.angularls.setup({})
-      lspconfig.yamlls.setup({})
+      vim.lsp.enable("angularls")
+      vim.lsp.enable("yamlls")
 
-      lspconfig.emmet_ls.setup({
+      vim.lsp.config("emmet_ls", {
         capabilities = capabilities,
         filetypes = {
           "css",
@@ -80,18 +83,20 @@ return {
           "vue",
         },
       })
+      vim.lsp.enable("emmet_ls")
 
-      lspconfig.cds_lsp.setup({
+      vim.lsp.config("cds_lsp", {
         default_config = {
           cmd = {
             vim.fn.expand("cds-lsp"),
             "--stdio",
           },
           filetypes = { "cds" },
-          root_dir = lspconfig.util.root_pattern(".git", "package.json"),
+          root_dir = require("lspconfig").util.root_pattern(".git", "package.json"),
           settings = {},
         },
       })
+      vim.lsp.enable("cds_lsp")
 
 
       -- Global mappings.
