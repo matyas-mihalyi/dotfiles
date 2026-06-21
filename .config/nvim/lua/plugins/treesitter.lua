@@ -37,7 +37,8 @@ return {
         "css",
         "json",
         "yaml",
-        "cds"
+        "cds",
+        "go"
       },
 
       -- Install parsers synchronously (only applied to `ensure_installed`)

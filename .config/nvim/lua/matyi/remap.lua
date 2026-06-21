@@ -39,24 +39,27 @@ vim.keymap.set("n", "N", "Nzz")
 -- oil
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
+-- search words
+vim.keymap.set("n", "<leader>sw", ":SearchWord<CR>")
+
 -- toggle theme
 local theme_file = vim.fn.stdpath("config") .. "/theme.txt"
 local function save_theme(theme)
-	local file = io.open(theme_file, "w")
-	if file then
-		file:write(theme)
-		file:close()
-	else
-		print("Error saving theme to file")
-	end
+  local file = io.open(theme_file, "w")
+  if file then
+    file:write(theme)
+    file:close()
+  else
+    print("Error saving theme to file")
+  end
 end
 
 vim.keymap.set("n", "<leader>tt", function()
-	if vim.o.background == "light" then
-		vim.o.background = "dark"
-		save_theme("dark")
-	else
-		vim.o.background = "light"
-		save_theme("light")
-	end
+  if vim.o.background == "light" then
+    vim.o.background = "dark"
+    save_theme("dark")
+  else
+    vim.o.background = "light"
+    save_theme("light")
+  end
 end)

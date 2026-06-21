@@ -1,15 +1,3 @@
-local function eslint_config_exists()
-  local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
-  if not vim.tbl_isempty(eslintrc) then
-    return true
-  end
-  if vim.fn.filereadable("package.json") then
-    if vim.fn.json_decode(vim.fn.readfile("package.json"))["eslintConfig"] then
-      return true
-    end
-  end
-  return false
-end
 return {
   {
     "pmizio/typescript-tools.nvim",
@@ -42,6 +30,9 @@ return {
       vim.lsp.enable("lua_ls")
       -- lspconfig.ts_ls.setup({})
       vim.lsp.enable("clangd")
+
+      vim.lsp.enable("gopls")
+      require('go').setup() -- nvim.go
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
